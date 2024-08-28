@@ -1,15 +1,24 @@
 * {
+  transition: all 0.3s ease;
   margin: 0;
   padding: 0;
-font-family: 'Times New Roman', Times, serif;
+ font-family:Arial, Helvetica, sans-serif
+}
+body{
+  /* background: linear-gradient(to bottom, #1995AD, #A1D6E2, #F1F1F2); */
+ 
+  /* background: linear-gradient(to bottom, #31473A, #EDF4F2); */
+  
+  background: linear-gradient(to bottom,#3AA6B9,#FFD0D0,#FF9EAA, #F9F9E0);
 }
 h3 {
-  background-color: rgb(23, 23, 51);
-  color: white;
-  height: 20px;
-  text-align: center;
-  padding: 10px;
- 
+  font-family: 'Times New Roman', Times, serif;
+   color: white;  
+    height: 20px;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .choices {
   display: flex;
@@ -25,37 +34,80 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.005);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 img {
   height: 90px;
   width: 90px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 50%;
+  direction: left;
 }
 .choice:hover {
   cursor: pointer;
-  background-color: black;
+    transform: scale(1.1);
+    background: #3AA6B9;
 }
 .Score-Board {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 3.5rem;
   margin-top: 30px;
-  font-size: 20px;
-  gap: 3rem;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  color:white;
+  
 }
 #user-score ,#comp-score{
-    font-size: 30px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+.divider {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: white;
 }
 .msg-container{
-    text-align: center;
-    margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
 #msg{
-    background-color: black;
-    color: white;
-    display: inline;
-    font-size: 20px;
-    padding: 10px;
-   border-radius: 10px;
+  background-color:#3AA6B9;
+  color: white;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 52px;
+}
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+}
+@media (max-width: 600px) {
+  .choices {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .Score-Board {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  h3 {
+      font-size: 18px;
+  }
 }
